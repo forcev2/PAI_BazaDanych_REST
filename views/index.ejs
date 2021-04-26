@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Car-24</title>
+</head>
+<body>
+    <!--include header-->
+    <%- include('include/_header')%>
+    <!--/include header-->
+    <div class="banner">
+        <div class="infotext">
+            <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="search">
+            <div class="searchPanel">
+                <div class="searchText">Rezerwuj online</div>
+                <form action="/searchQuery" method="get">
+                    <div class="formWhole">
+                        <div class="inputWhole">
+                            <div class="inputrow1">
+                                <input type="text" class="inputFrom" name="place" placeholder="Miejsce Odbioru">
+                                <div class="inputFrom selectInForm">
+                                    <div class="selectText">Rodzaj: </div>
+                                    <select name="type" id="carsType" class="selectInFormInput">
+                                        <option value="1">Sedan</option>
+                                        <option value="2">Hatchback</option>
+                                        <option value="3">Kombi</option>
+                                        <option value="4">Van</option>
+                                    </select>
+                                </div>                
+                            </div>
+                            <div class="inputrow2">
+                                <input type="date" name="dateStart" id="" class="inputFrom" >
+                                <div>=></div>
+                                <input type="date" name="dateEnd" id="" class="inputFrom" >
+                            </div>
+                            <div class="errorBox">
+                                <%= error %>
+                            </div>
+                        </div>    
+                        <button type="submit" class="submitButton">Wyszukaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="aboutTitle">
+            O firmie
+        </div>
+        <div class="aboutContent">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida eros leo, vitae consequat nulla consectetur ultrices. Etiam neque neque, cursus ut volutpat eget, dictum vel purus. Duis venenatis leo at consectetur sodales. <br>
+            <br>
+            Pellentesque vestibulum pellentesque ultrices. Etiam non ante laoreet, ullamcorper purus at, molestie mauris. Nunc vel scelerisque velit. Nulla facilisi. In ullamcorper quam ac auctor semper.  <br>
+            Morbi hendrerit neque in massa laoreet tempus. Pellentesque nec tincidunt quam,  <br>
+            et sagittis dui. Etiam condimentum lectus sit amet pretium consequat. Suspendisse suscipit rhoncus interdum. Donec ultrices mauris erat, ut viverra sapien sollicitudin ut. <br>
+            <br>
+            Maecenas lobortis mattis blandit. Morbi porta mi mi, sit amet elementum neque pretium nec. Pellentesque lobortis, nisl eget vestibulum feugiat, velit lorem ultrices nisi, ut facilisis est sem eget tortor. Praesent non eros et augue fringilla varius fringilla a massa. Vestibulum vel imperdiet leo, ut pretium urna. Maecenas pretium quam justo, ut imperdiet ante vehicula ut. Suspendisse potenti. <br>
+            <br>
+            Proin magna lectus, viverra non dolor quis, tempus facilisis urna. Mauris gravida, eros non cursus rutrum, lectus lectus bibendum mi, a consequat ligula tellus vitae lacus. Etiam sit amet nibh tempor, laoreet augue eget, finibus purus. In lectus dui, imperdiet non hendrerit id, aliquam ac ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur sollicitudin, lacus nec ultricies ultricies, urna enim eleifend diam, sit amet aliquam libero neque nec lacus. Suspendisse vulputate purus a neque rhoncus malesuada. Phasellus nec tortor vel metus auctor sollicitudin et et est. Curabitur nec rutrum purus. Sed commodo blandit scelerisque. Nullam sit amet finibus nibh, et elementum velit. Suspendisse potenti. Aliquam erat volutpat. Nunc sed scelerisque enim. Proin quis elit sit amet nulla laoreet consequat at vel nulla. Proin vel eleifend ligula, a finibus sem. <br>
+        </div>
+    </div>
+</body>
+</html>

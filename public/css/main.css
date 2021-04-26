@@ -1,0 +1,38 @@
+.top_panel{
+    padding-right : 200px;
+    padding-left: 200px;
+}
+
+.top_panel{
+    height:70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    align-self:  center;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signingButtons{
+    align-self:  center;
+}
+
+.loginButton{
+    border-style: none;
+}
+
+.signin_button{
+    height: 40px;
+    width: 140px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.signin_button:hover{
+    background-color: #D9001B;
+    color: white;
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/search.js"></script>
+    <title>Car-24</title>
+</head>
+<body>
+<!--include header-->
+    <%- include('include/_header')%>
+<!--/include header-->
+    <div class="main">
+        <div class="searchInfoBar">
+            <div class="dateAndPlace">
+                <div class="overText">
+                    Odbiór
+                </div>
+                <div class="bigUnderText">
+                    <%= place %> - <%= new Intl.DateTimeFormat('pl').format(dateStart) %>
+                </div>
+            </div>
+            <div class="arrowDates">
+                <div class="arrow">
+                    >
+                </div>
+            </div>
+            <div class="dateAndPlace">
+                <div class="overText">
+                    Zwrot
+                </div>
+                <div class="bigUnderText">
+                    <%= place %> - <%= new Intl.DateTimeFormat('pl').format(dateEnd) %>
+                </div>
+            </div>
+            <div class="typeMain">
+                <div class="overText">
+                    Typ
+                </div>
+                <div class="bigUnderText">
+                    <%= type_name.type %>
+                </div>
+            </div>
+        </div>
+        <div class="underPanel">
+            <div class="wynikiText">
+                Wyniki
+            </div>
+            <form action="/">
+                <button class="changeQueryButton">
+                    Zmień dane wyszukiwania
+                </button>            
+            </form>
+
+        </div>
+        <div class="numOfResults">
+            <%= results.length %> 
+            <% if(results.length == 1){ %>
+                wynik
+              <% } else if(results.length < 5){ %>  
+                wyniki
+             <% } else { %>
+                wyników
+             <% } %>
+        </div>
+        <%for (var result in results){%> 
+            <div class="resultCard">
+                <div class="image" style="background-image:url('data:image/png;base64,<%=results[result].image%>'); color:red;">
+                    
+                </div>
+                <div class="overallInfo">
+                    <div class="productName">
+                        <%= results[result].nazwa %>
+                    </div>
+                    <div class="productType">
+                        <%= results[result].type %>
+                    </div>
+                </div>
+                <div class="productPriceSeg">
+                    <div class="productPricesmallText">
+                        cena za jeden dzień
+                    </div>
+                    <div class="productPrice">
+                        <%= results[result].price %> zł
+                    </div>
+                    <div class="productPricesmallText">
+                        cena za <%= Difference_In_Days %> dni
+                    </div>
+                    <div class="productPrice">
+                        <%= results[result].price * Difference_In_Days %> zł
+                    </div>
+                </div>
+
+                <div class="buttonRent">
+                    <button class="buttonRentButt" onclick="rent('<%=dateStart%>','<%=dateEnd%>','<%=results[result].car_id%>')" >
+                        Zarezerwuj
+                    </button>
+                </div>
+            </div>
+
+        <%}%>
+
+        
+        <div class="bottomFill">
+            
+        </div>
+    </div>
+</body>
+</html>

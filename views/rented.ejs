@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rented.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/rented.js"></script>
+    <title>Car-24.pl</title>
+</head>
+<body>
+    <!--include header-->
+    <%- include('include/_header')%>
+    <!--/include header-->
+    
+
+    <div class="main">
+    <div class="panelTitle">
+        Dokonane Rezerwacje
+    </div>
+    <%for (var result in results){%> 
+        <div class="rentPanel">
+            <div class="panelPart">
+                <div class="panel-part-title">
+                    nazwa
+                </div>
+                <div class="panel-part-main title-part">
+                    <%= results[result].nazwa %>
+                </div>
+
+            </div>
+            <div class="panelPart">
+                <div class="panel-part-title">
+                    cena
+                </div>
+                <div class="panel-part-main price-part">
+                    <%= results[result].price %> zł
+                </div>
+            </div>
+            <div class="panelPart">
+                <div class="panel-part-title">
+                    rezerwacja
+                </div>
+                <div class="panel-part-main reservation-part">
+                    <%= new Intl.DateTimeFormat('pl').format(results[result].rental_date) %>
+                </div>
+                
+            </div>
+            <div class="panelPart">
+                <div class="panel-part-title">
+                    okres rezerwacji
+                </div>
+                <div class="panel-part-main okres-part">
+                    <%= new Intl.DateTimeFormat('pl').format(results[result].start) %> - 
+                    <%= new Intl.DateTimeFormat('pl').format(results[result].end) %>  
+                </div>                
+            </div>
+            <div class="panelPart">
+                <div class="panel-part-title">
+                    status
+                </div>
+                <div class="panel-part-main">
+                    <%= results[result].status %>                 
+                </div>
+            </div>
+            <div class="buttonPart">
+                    <button id="myBtn" 
+                    onclick="openModal('<%=results[result].start%>','<%=results[result].end%>','<%=results[result].rental_id%>')" 
+                    class="button-panel">
+                        <span class="material-icons">
+                            mode_edit
+                        </span>
+                    </button>
+                    <div class="form-wrap">
+                        <form action="/cancelRental/<%=results[result].rental_id%>" method="POST">
+                            <button type="submit" class="button-panel">
+                                <span class="material-icons">
+                                    cancel
+                                </span>
+                            </button>      
+                        </form>
+                    </div>                    
+            </div>
+        </div>
+
+    <% } %>
+    </div>
+
+    <div id="myModal" class="modal-popup">
+        <!-- Modal content -->
+        <div class="modal-content-block">
+          <div class="modal-title">
+            Edytuj Rezerwacje
+          </div>
+            <form action="/changeRentalDates" method="POST" id="rental">
+                <div class="modal-inputs">
+                    <div class="modal-input-wrapper">
+                        <div class="modal-input-title">Od</div>
+                        <input type="date" name="start" id="start" class="dateStartInput date-input">
+                    </div>
+                    <span class="material-icons arrow-marg" >
+                        arrow_forward_ios
+                    </span>
+                    <div class="modal-input-wrapper">
+                        <div class="modal-input-title">Do</div>
+                        <input type="date" name="end" id="end" class="dateEndInput date-input">                    
+                    </div>                    
+                </div>
+                <input type="text" name="rental_id" id="rental_id" hidden>
+                <div class="error-msg" >
+                    <p id="error-msg" hidden>
+                        Podane daty są zajęte
+                    </p>
+                </div>
+                <div class="buttons-bot-modal">
+                    <button submit class="button-modal modal-success">Change</button>
+
+                    <button onclick="closeModal()" class="button-modal modal-cancel" type="button">Cancel</button>   
+                </div> 
+            </form>
+        </div> 
+      </div> 
+
+
+</body>
+</html>

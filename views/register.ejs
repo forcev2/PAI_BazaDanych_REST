@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Car-24</title>
+</head>
+
+<body>
+    <!--include header-->
+    <%- include('include/_header')%>
+        <!--/include header-->
+        <div class="background">
+            <div class="form-background">
+                <div class="register-title">
+                    Rejestracja
+                </div>
+                <div class="form-wrapper">
+                    <form action="/register" method="POST">
+                        <div class="form-seg">
+                            <div class="form-top-seg">
+                                <div>
+                                    <div for="name" class="label-form">Imię*</div>
+                                    <input type="text" id="name" name="name" class="top-seg" required>                                    
+                                </div>
+                                <div>
+                                    <div for="surname" class="label-form">Nazwisko*</div>
+                                    <input type="text" id="surname" name="surname" class="top-seg" required>                                 
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-seg">
+                            <div for="username" class="label-form">
+                                Nazwa Użytkownika*
+                                <% if (error != null) { %>
+                                    <script>
+                                         console.log('<%=error%>')
+                                        console.log('<%=error.usernameTaken%>')
+                                    </script>
+                                    <% if (error.usernameTaken) { %>
+                                        <span class="error-msg-form"> 
+                                            Podana nazwa użytkownika jest zajęta
+                                        </span>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <input type="text" id="username" name="username" required>
+
+                        </div>
+
+                        <div class="form-seg">
+
+                            <div  for="companyName" class="label-form">Nazwa Firmy</div>
+                            <input type="text" id="companyName" name="companyName">
+
+                        </div>
+
+                        <div class="form-seg">
+
+                            <div for="email" class="label-form">
+                                E-mail*
+                                <% if (error != null) { %>
+                                    <% if (error.email) { %>
+                                        <span class="error-msg-form"> 
+                                            Podany email jest zajęty
+                                        </span>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <input type="text" id="email" name="email" required>
+
+                        </div>
+
+                        <div class="form-seg">
+
+                            <div for="emailRepeat" class="label-form">
+                                Powtórz E-mail*
+                                <% if (error != null) { %>
+                                    <% if (error.emailsDoesNotMatch) { %>
+                                        <span class="error-msg-form"> 
+                                            Adresy email nie są takie same
+                                        </span>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <input type="text" id="emailRepeat" name="emailRepeat" required>
+
+                        </div>
+
+                        <div class="form-seg">
+                            
+                            <div for="password" class="label-form">Haslo*</div>
+                            <input type="text" id="password" name="password" required>
+
+                        </div>
+
+                        <div class="form-seg">
+                            
+                            <div for="passwordRepeat" class="label-form">
+                                Powtórz hasło*
+                                <% if (error != null) { %>
+                                    <% if (error.passwordsDoesNotMatch) { %>
+                                        <span class="error-msg-form"> 
+                                            Hała nie są takie same
+                                        </span>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <input type="text" id="passwordRepeat" name="passwordRepeat" required>
+
+                        </div>
+                        <div class="form-seg">
+                            <div class="wyp-text">Wypełnij wszystkie pola oznaczone przez *</div>
+                            <div class="button-seg">
+                                <button type="submit" class="submit-button">Zarejestruj</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

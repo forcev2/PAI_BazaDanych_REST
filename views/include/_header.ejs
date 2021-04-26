@@ -1,0 +1,22 @@
+
+    <!--/Header-->
+    <link rel="stylesheet" href="css/main.css">
+    <div class="top_panel">
+        <div class="d-inline logo" onclick="location.href='/';">
+            Car-24.<span style="color:red">pl</span>
+        </div>
+        <div class="d-inline signingButtons">
+            <% if(!isLoggedIn){ %>
+                <button class="signin_button loginButton" onclick="location.href='/login';">Zaloguj</button>
+                <button class="signin_button registerButton" onclick="location.href='/register';">Zarejestruj</button>
+            <% } else {%>
+                <% if(!isAdmin){ %>
+                <button class="signin_button registerButton" onclick="location.href='/rented';">Wypożyczone</button>
+                <% } else {%>
+                <button class="signin_button registerButton" onclick="location.href='/adminPanel';">Panel Admina</button>
+                <% } %>
+                <button class="signin_button loginButton" onclick="location.href='/logout';">Wyloguj się</button>
+            <% } %>
+        </div>
+    </div>        
+    <!--/Header-->

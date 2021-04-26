@@ -1,0 +1,144 @@
+:root {
+    --bigFont-inside-top: 24px;
+    --smallFont-inside-top: 15px;
+    --bigFont-panel: 28px;
+    --shadow-color:#7D7D7D;
+    --mai-red: #D9001B;
+  }
+
+.main{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.searchInfoBar{
+    margin-top: 40px;
+    box-shadow: 2px 2px 3px 0px var(--shadow-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.dateAndPlace{
+    width: 400px;
+}
+
+.arrowDates{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typeMain{
+    align-self: flex-end;
+    width: 150px;
+    margin-left: auto;
+}
+
+.bigUnderText{
+    font-size: var(--bigFont-inside-top);
+}
+
+.overText{
+    font-size: var(--smallFont-inside-top);
+    height:15px;
+}
+
+.arrow{
+    font-size: 32px;
+}
+
+.underPanel{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wynikiText{
+    font-size: var(--bigFont-inside-top);
+    font-weight: bold;
+}
+
+.changeQueryButton{
+    border-radius: 8px;
+    border: none;
+    width: 150px;
+    font-size: 13px;
+    box-shadow: 0px 0px 2px 0px var(--shadow-color);
+    background-color: white;
+}
+
+.changeQueryButton:hover{
+    box-shadow: 0px 0px 5px 0px var(--shadow-color);
+    background-color: var(--mai-red);
+    color: white;
+}
+
+.numOfResults{
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.resultCard{
+    display: flex;
+    box-shadow: 2px 2px 3px 0px var(--shadow-color);
+    border: 1px solid #D7D7D7;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.image{
+    width: 220px;
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.overallInfo{
+    width: 200px;
+}
+
+.buttonRent{
+    margin-top: auto;
+    margin-left: 100px;
+}
+
+.buttonRentButt{
+    width: 124px;
+    height: 32px;
+    font-size: 13px;
+    background-color: var(--mai-red);
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+.productPriceSeg{
+    margin-left: auto;
+}
+
+.productPricesmallText{
+    font-size: 11px;
+    height: 10px;
+    
+}
+
+.productPrice{
+    font-size: var(--bigFont-panel);
+}
+
+.productName{
+    font-size: var(--bigFont-panel);
+    font-weight: bold;
+}
+
+.productType{
+    font-size: 18px;
+}
+
+.bottomFill{
+    height: 100px;
+}

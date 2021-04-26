@@ -1,0 +1,187 @@
+:root {
+    --bigFont-inside-top: 24px;
+    --smallFont-inside-top: 15px;
+    --bigFont-panel: 28px;
+    --shadow-color: #7D7D7D;
+    --mai-red: #D9001B;
+}
+
+
+.modal-popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content-block {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    height: 200px;
+    width: 600px;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-top: 20px;
+}
+
+.rentPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #D7D7D7;
+    box-shadow: 2px 2px 3px 0px var(--shadow-color);
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.panel-part-title {
+    font-size: 13px;
+}
+
+.panel-part-main {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.buttonPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-panel {
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 1px solid #D7D7D7;
+    height: 35px;
+}
+
+.finalize-button {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-panel:hover {
+    background-color: var(--mai-red);
+    color: white;
+}
+
+.button-panel[disabled]:hover{
+    background-color: white;
+    color: grey;
+    cursor: not-allowed;
+}
+
+.material-icons {
+    margin-top: 4px
+}
+
+.panelTitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.modal-title {
+    font-size: 24px;
+}
+
+
+.modal-inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow-marg {
+    margin-top: 20px;
+}
+
+.date-input {
+    width: 250px;
+}
+
+.buttons-bot-modal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-modal {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 140px;
+    border-radius: 5px;
+    height: 33px;
+}
+
+.modal-success {
+    background-color: var(--mai-red);
+    color: white;
+    border: none;
+}
+
+.modal-cancel {
+    background-color: white;
+    border-color: #D7D7D7;
+}
+
+.error-msg {
+    height: 35px;
+}
+
+#error-msg {
+    color: #D9001B;
+    font-size: small;
+    font-weight: bold;
+}
+
+.panel-before-date {
+    font-weight: lighter;
+    font-size: 12px;
+}

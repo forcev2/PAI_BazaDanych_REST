@@ -1,0 +1,94 @@
+:root {
+    --bigFont-inside-top: 24px;
+    --smallFont-inside-top: 15px;
+    --bigFont-panel: 28px;
+    --shadow-color:#7D7D7D;
+    --mai-red: #D9001B;
+  }
+  
+.background{
+    background-image: url('../img/car_background_register.jpg');
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+.form-background{
+    background-color:white;
+    width: 750px;
+    height: 620px;
+    padding: 30px;
+    padding-top: 15px;
+}
+
+.register-title{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.form-wrapper{
+    padding: 10px 50px 10px 50px
+}
+
+.form-wrapper{
+    display: flex;
+}
+
+.form-seg{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.label-form{
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+}
+
+.form-top-seg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+form{
+    width: 100%;
+}
+
+.top-seg{
+    width: 270px;
+}
+
+.submit-button{
+    width: 124px;
+    height: 32px;
+    font-size: 13px;
+    background-color: var(--mai-red);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    margin: 0%;
+}
+
+.button-seg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.wyp-text{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.error-msg-form{
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+}

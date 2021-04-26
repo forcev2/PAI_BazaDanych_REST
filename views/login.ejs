@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Car-24</title>
+</head>
+<body>
+    <!--include header-->
+    <%- include('include/_header')%>
+    <!--/include header-->
+    <div class="background">
+        <div class="form-background">
+            <form action="/login" method="POST">
+                <div class="register-title">
+                    Logowanie
+                </div>
+                <div class="form-seg">
+                    <div for="username" class="label-form">Nazwa użytkownika</div>
+                    <input type="text" id="username" name="username" class="input-register" required>
+                </div>
+                <div class="form-seg">
+                    <div for="password" class="label-form">Hasło</div>
+                    <input type="password" id="password" name="password" class="input-register" required>
+                </div>
+                <div class="error-msg">
+                    <% if (messages.error) {%>
+                        <%= messages.error %>
+                    <% } %> 
+                </div>
+                <div class="button-seg">
+                    <button type="submit" class="submit-button">Login</button>                   
+                </div>
+            </form>            
+        </div>
+    </div>
+   
+
+
+</body>
+</html>

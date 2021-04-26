@@ -1,0 +1,123 @@
+.banner, .about{
+    padding-right : 200px;
+    padding-left: 200px;
+}
+
+.infotext{
+    font-size: 24px;
+    color: white;
+}
+
+.banner{
+    height: 490px;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../img/car_background_main.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position-y: -700px;
+    background-position-x: -100px;
+    background-size: auto;
+}
+
+
+
+.searchText{
+    font-size: 32px;
+    font-weight: bold;
+    color:white;
+} 
+
+
+.searchPanel{
+    bottom: 20px;
+}
+
+.formWhole{
+    background-color: white;
+    padding-top: 34px;
+    padding-left: 34px;
+    padding-right: 34px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.submitButton{
+    align-self: flex-end;
+    width: 120px;
+    height: 32px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #D9001B;
+    color:white;
+    font-size: 13px;
+    margin-bottom: 34px;
+}
+
+.inputWhole{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+
+.errorBox{
+    height: 20px;
+   margin-bottom: 14px;
+   color: #D9001B;
+   font-weight: bold;
+}
+
+.inputrow1, .inputrow2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputrow2{
+    margin-top: auto;
+}
+
+.inputFrom{
+    width: 390px;
+    height: 32px;
+}
+
+.selectInForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectText{
+    align-self: center;
+}
+
+.selectInFormInput{
+    width: 300px;
+    align-self: center;
+    height:32px;
+}
+
+
+.about{
+    width: 75%;
+    padding-top: 30px;
+}
+
+.aboutTitle{
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.aboutContent{
+    font-size: 16px;
+    margin-bottom: 60px;
+}
